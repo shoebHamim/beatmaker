@@ -96,17 +96,19 @@ class DrumKit {
       }
       
     }
-    muteAudio(clsList){
-      if(clsList.contains('kick-volume')){
+    muteAudio(e){
+      const data_track=e.target.getAttribute('data-track');
+  
+      if(data_track==='0'){
         this.kickMute=!this.kickMute;
         document.querySelector('.kick-volume').classList.toggle('muted')
 
       }
-      else if(clsList.contains('snare-volume')){
+      else if(data_track==='1'){
         this.snareMute=!this.snareMute;
         document.querySelector('.snare-volume').classList.toggle('muted')
     }
-    else if(clsList.contains('hihat-volume')){
+    else if(data_track==='2'){
       this.hihatMute=!this.hihatMute;
       document.querySelector('.hihat-volume').classList.toggle('muted')
 
@@ -154,8 +156,7 @@ drumkit.selects.forEach(select=>{
 // event listener for muting
 drumkit.mutebtns.forEach(mutebtn=>{
   mutebtn.addEventListener('click',(e)=>{
-    const whichBtn=e.path[1].classList;
-    drumkit.muteAudio(whichBtn)
+    drumkit.muteAudio(e)
   })
 })
 
