@@ -1,0 +1,16 @@
+setInterval(function(),interval)
+setInterval(function(),1000) //example
+
+
+// how did the pad selection work
+
+1. we created an object constructor called drumkit 
+2. in that object we selected all the pads(queryselectorAll) 
+and saved it as the object's property
+3. then we looped through all the pads and added event listener
+to them that when clicked it invoked another method called 
+drumkit.activepad
+4. in that method, this keyword refers to the pad we are adding event
+listener to and it adds a active class in that pad
+5. we created css class for that specific pads with specific background color
+that's how it works
